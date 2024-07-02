@@ -1001,6 +1001,20 @@ didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
         }
     }
 
+    // 修改----------------------------部分
+    //获取原始域名信息
+    NSURLRequest *request = task.currentRequest;
+    NSString *host = [[request allHTTPHeaderFields] objectForKey:@"host"];
+    if (!host) {
+        host = challenge.protectionSpace.host;
+    }
+    if ([challenge.protectionSpace.authenticationMethod  isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        if ([self evaluateServerTrust:challenge.protectionSpace.serverTrust forDomain:host]) {
+            disposition = NSURLSessionAuthChallengeUseCredential;
+            credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+        }
+    }
+    
     if (completionHandler) {
         completionHandler(disposition, credential);
     }
@@ -1270,5 +1284,30 @@ expectedTotalBytes:(int64_t)expectedTotalBytes
 - (instancetype)copyWithZone:(NSZone *)zone {
     return [[[self class] allocWithZone:zone] initWithSessionConfiguration:self.session.configuration];
 }
+
+#pragma mark - new add
+- (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
+
+    //创建证书校验策略
+    NSMutableArray *policies = [NSMutableArray array];
+    if (domain) {
+        [policies addObject:(__bridge_transfer id)SecPolicyCreateSSL(true, (__bridge CFStringRef)domain)];
+    } else {
+        [policies addObject:(__bridge_transfer id)SecPolicyCreateBasicX509()];
+    }
+
+    //绑定校验策略到服务端的证书上
+    SecTrustSetPolicies(serverTrust, (__bridge CFArrayRef)policies);
+
+    //评估当前 serverTrust 是否可信任，
+    //官方建议在 result = kSecTrustResultUnspecified 或 kSecTrustResultProceed 的情况下 serverTrust 可以被验证通过，
+    //https://developer.apple.com/library/ios/technotes/tn2232/_index.html
+    //关于SecTrustResultType的详细信息请参考SecTrust.h
+    SecTrustResultType result;
+    SecTrustEvaluate(serverTrust, &result);
+
+    return (result == kSecTrustResultUnspecified || result == kSecTrustResultProceed);
+}
+
 
 @end

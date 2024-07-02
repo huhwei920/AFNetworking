@@ -3,10 +3,10 @@ Pod::Spec.new do |s|
   s.version  = '4.0.2'
   s.license  = 'MIT'
   s.summary  = 'A delightful networking framework for Apple platforms.'
-  s.homepage = 'https://github.com/huhwei920/AFNetworking'
+  s.homepage = 'https://github.com/huhwei920/AFNetworking-WM'
   s.social_media_url = 'https://twitter.com/AFNetworking'
   s.authors  = { 'huhangwei' => 'huhangwei@gmail.com' }
-  s.source   = { :git => 'https://github.com/huhwei920/AFNetworking.git', :tag => s.version }
+  s.source   = { :git => 'https://github.com/huhwei920/AFNetworking-WM.git', :tag => s.version }
 
   s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.10'

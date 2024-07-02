@@ -490,7 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				97DF42B32C33D1B9001043C8 /* Resources */,
-				299522451BBF125A00859F49 /* AFNetworking */,
+				299522451BBF125A00859F49 /* AFNetworking-WM */,
 				299522851BBF13C700859F49 /* UIKit+AFNetworking */,
 				2995223B1BBF104D00859F49 /* Supporting Files */,
 				298D7C561BC2C88F00FD3B3E /* Tests */,
@@ -534,7 +534,7 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
-		299522451BBF125A00859F49 /* AFNetworking */ = {
+		299522451BBF125A00859F49 /* AFNetworking-WM */ = {
 			isa = PBXGroup;
 			children = (
 				1F083A4920364648004D80C7 /* AFCompatibilityMacros.h */,
@@ -551,7 +551,7 @@
 				299522511BBF125A00859F49 /* AFURLSessionManager.h */,
 				299522521BBF125A00859F49 /* AFURLSessionManager.m */,
 			);
-			path = AFNetworking;
+			path = "AFNetworking-WM";
 			sourceTree = "<group>";
 		};
 		299522851BBF13C700859F49 /* UIKit+AFNetworking */ = {

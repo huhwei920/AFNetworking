@@ -194,6 +194,7 @@
 		5F4323DD1BF63CCC003B8749 /* GeoTrust_Global_CA_Root.cer in Resources */ = {isa = PBXBuildFile; fileRef = 5F4323DC1BF63CCC003B8749 /* GeoTrust_Global_CA_Root.cer */; };
 		5F4323DE1BF63CCC003B8749 /* GeoTrust_Global_CA_Root.cer in Resources */ = {isa = PBXBuildFile; fileRef = 5F4323DC1BF63CCC003B8749 /* GeoTrust_Global_CA_Root.cer */; };
 		5F4323DF1BF63CCC003B8749 /* GeoTrust_Global_CA_Root.cer in Resources */ = {isa = PBXBuildFile; fileRef = 5F4323DC1BF63CCC003B8749 /* GeoTrust_Global_CA_Root.cer */; };
+		97DF42B52C33D1D6001043C8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 97DF42B42C33D1D6001043C8 /* PrivacyInfo.xcprivacy */; };
 		E2B10D8E233035100004E005 /* Starfield Services Root Certificate Authority - G2.cer in Resources */ = {isa = PBXBuildFile; fileRef = E2B10D8B233035100004E005 /* Starfield Services Root Certificate Authority - G2.cer */; };
 		E2B10D8F233035100004E005 /* Starfield Services Root Certificate Authority - G2.cer in Resources */ = {isa = PBXBuildFile; fileRef = E2B10D8B233035100004E005 /* Starfield Services Root Certificate Authority - G2.cer */; };
 		E2B10D90233035100004E005 /* Starfield Services Root Certificate Authority - G2.cer in Resources */ = {isa = PBXBuildFile; fileRef = E2B10D8B233035100004E005 /* Starfield Services Root Certificate Authority - G2.cer */; };
@@ -322,6 +323,7 @@
 		5F4323D41BF63CB0003B8749 /* GoogleComServerTrustChainPath1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GoogleComServerTrustChainPath1; sourceTree = "<group>"; };
 		5F4323D81BF63CBA003B8749 /* GoogleComServerTrustChainPath2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GoogleComServerTrustChainPath2; sourceTree = "<group>"; };
 		5F4323DC1BF63CCC003B8749 /* GeoTrust_Global_CA_Root.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeoTrust_Global_CA_Root.cer; sourceTree = "<group>"; };
+		97DF42B42C33D1D6001043C8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		E2B10D8B233035100004E005 /* Starfield Services Root Certificate Authority - G2.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Starfield Services Root Certificate Authority - G2.cer"; sourceTree = "<group>"; };
 		E2B10D8C233035100004E005 /* Amazon Root CA 1.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazon Root CA 1.cer"; sourceTree = "<group>"; };
 		E2B10D8D233035100004E005 /* Amazon.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = Amazon.cer; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 		2995222F1BBF104D00859F49 = {
 			isa = PBXGroup;
 			children = (
+				97DF42B32C33D1B9001043C8 /* Resources */,
 				299522451BBF125A00859F49 /* AFNetworking */,
 				299522851BBF13C700859F49 /* UIKit+AFNetworking */,
 				2995223B1BBF104D00859F49 /* Supporting Files */,
@@ -589,6 +592,14 @@
 				5F4323B51BF63741003B8749 /* google.com.cer */,
 			);
 			path = Google.com;
+			sourceTree = "<group>";
+		};
+		97DF42B32C33D1B9001043C8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				97DF42B42C33D1D6001043C8 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -953,6 +964,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97DF42B52C33D1D6001043C8 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
